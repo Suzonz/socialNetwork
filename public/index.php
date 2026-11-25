@@ -1,6 +1,11 @@
 <?php
+// En local, les erreurs sont affichées ; en ligne, mettre APP_DEBUG=0 chez l'hébergeur
+define('APP_DEBUG', getenv('APP_DEBUG') !== '0');
 error_reporting(E_ALL);
-ini_set('display_errors', 1);
+ini_set('display_errors', APP_DEBUG ? '1' : '0');
+
+// Cookie de session : invisible pour JavaScript, non envoyé depuis un autre site
+session_set_cookie_params(['httponly' => true, 'samesite' => 'Lax', 'secure' => !empty($_SERVER['HTTPS'])]);
 session_start();
 
 //db et Router

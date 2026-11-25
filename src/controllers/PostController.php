@@ -13,9 +13,10 @@ class PostController extends Controller
         }
 
         if (isset($_POST['new_post_title']) && isset($_POST['new_post_content'])) {
-            $title = htmlspecialchars($_POST['new_post_title']);
-            $content = htmlspecialchars($_POST['new_post_content']);
-            $author = htmlspecialchars($_SESSION['pseudo']);
+            // Enregistré tel quel : l'échappement se fait à l'affichage (htmlspecialchars dans les vues)
+            $title = trim($_POST['new_post_title']);
+            $content = trim($_POST['new_post_content']);
+            $author = $_SESSION['pseudo'];
 
             if (empty($title) || empty($content)) {
                 $errors[] = "Tous les champs sont requis.";
@@ -31,7 +32,7 @@ class PostController extends Controller
                         $errors[] = "Erreur lors de la publication du post.";
                     }
                 } catch (Exception $e) {
-                    $errors[] = "Une erreur est survenue : " . $e->getMessage();
+                    $errors[] = APP_DEBUG ? "Une erreur est survenue : " . $e->getMessage() : "Une erreur est survenue.";
                     error_log($e);
                 }
             }

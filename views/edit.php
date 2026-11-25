@@ -50,7 +50,7 @@
                 <label for="new_post_content">Contenu</label>
                 <textarea name="new_post_content" id="new_post_content" required><?= htmlspecialchars($post->getContent()) ?></textarea>
 
-                <input type="hidden" name="update" value="<?= $post->getId() ?>">
+                <input type="hidden" name="update" value="<?= (int) $post->getId() ?>">
                 <button type="submit">Confirmer</button>
             </form>
         <?php else: ?>

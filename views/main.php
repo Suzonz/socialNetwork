@@ -27,7 +27,7 @@
             <a class="titre" href="/"><h1>Catbook</h1></a>  
             <a href="/logout">Se déconnecter</a>
             </div>
-            <h2 class="welcome">Bienvenue <?= $_SESSION['pseudo'] ?></h2>
+            <h2 class="welcome">Bienvenue <?= htmlspecialchars($_SESSION['pseudo']) ?></h2>
         <?php endif; ?>
     </header>
     <main>
@@ -59,12 +59,12 @@
                             <p><?= nl2br(htmlspecialchars($post['content'])) ?></p>
                             <div class="button-container">
                                 <form method="POST" action="/edit">
-                                    <button name="editView" value="<?= $post['id'] ?>" class="edit-btn">
+                                    <button name="editView" value="<?= (int) $post['id'] ?>" class="edit-btn">
                                         <img src="/assets/images/pencil.svg" alt="modifier" class="edit-icon">
                                     </button>
                                 </form>
                                 <form method="POST" action="/delete">
-                                    <button name="delete" value="<?= $post['id'] ?>">
+                                    <button name="delete" value="<?= (int) $post['id'] ?>">
                                         <img src="/assets/images/bin.svg" alt="supprimer">
                                     </button>
                                 </form>

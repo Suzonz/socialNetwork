@@ -30,17 +30,23 @@ class RegisterController extends Controller
                     $errors[] = "L'adresse email n'est pas valide.";
                 }
 
+                if (empty($errors) && UserRepository::pseudoExists($pseudo)) {
+                    $errors[] = "Ce pseudo est déjà pris.";
+                }
+
                 // Si pas d’erreurs, on enregistre
                 if (empty($errors)) {
                     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
                     $user = new User($pseudo, $hashedPassword, $email);
                     UserRepository::addUser($user);
-                    header('Location: http://localhost:8000/login');
+                    header('Location: /login');
                     exit;
                 }
             }
         } catch (\Throwable $th) {
-            $errors[] = "Erreur serveur : " . $th->getMessage();
+            error_log($th->getMessage());
+            // Le détail de l'erreur n'est montré qu'en local
+            $errors[] = APP_DEBUG ? "Erreur serveur : " . $th->getMessage() : "Erreur serveur, réessaie plus tard.";
         }
 
         require_once("../views/register.php");

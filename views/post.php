@@ -27,7 +27,7 @@
             <a class="titre" href="/"><h1>Catbook</h1></a>  
             <a href="/logout">Se déconnecter</a>
             </div>
-            <h2 class="welcome">Bienvenue <?= $_SESSION['pseudo'] ?></h2>
+            <h2 class="welcome">Bienvenue <?= htmlspecialchars($_SESSION['pseudo']) ?></h2>
         <?php endif; ?>
     </header>
 
