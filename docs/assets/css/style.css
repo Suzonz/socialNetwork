@@ -62,11 +62,22 @@ h3 {
 
 
 
+/* L'en-tête ne crée pas de boîte : la barre peut rester collée en haut
+   pendant tout le défilement (et pas seulement dans l'en-tête) */
+header {
+    display: contents;
+}
+
+
 .welcome {
     margin-left: 1%;
 }
 
 .barNav {
+    /* La barre reste en haut de l'écran quand on fait défiler la page */
+    position: sticky;
+    top: 0;
+    z-index: 10;
     background-color: #2c538d;
     color: white;
     padding: 0 20px;
