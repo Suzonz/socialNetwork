@@ -1,0 +1,52 @@
+/* Bandeau de la démo en ligne */
+.demo-banner {
+    margin: 0;
+    padding: 8px 16px;
+    background-color: #103266;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+}
+
+.demo-banner a {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Les boutons de navigation sont des liens dans la démo : même apparence que les boutons */
+.main-buttons a.nav-button {
+    display: inline-block;
+    background-color: #2c538d;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.main-buttons a.nav-button:hover {
+    background-color: #103266;
+    text-decoration: none;
+}
+
+/* Le texte d'un post garde ses retours à la ligne (nl2br dans la version PHP) */
+.posts .content {
+    white-space: pre-line;
+}
+
+.btn-cancel {
+    color: #27374e;
+    margin-left: 10px;
+}
+
+/* Petits écrans */
+@media (max-width: 700px) {
+    h2 {
+        margin-left: 5%;
+    }
+
+    .form,
+    .posts {
+        width: 92%;
+    }
+}

@@ -1,0 +1,223 @@
+@font-face {
+    font-family: "aroundcat";
+    src: url(../font/aroundcat.ttf);
+}
+
+@font-face {
+    font-family: "catcafe";
+    src: url(../font/catcafe.ttf);
+}
+
+@font-face {
+    font-family: "orientalcat";
+    src: url(../font/orientalcat.otf);
+}
+
+@font-face {
+    font-family: "simplecat";
+    src: url(../font/simplecat.otf);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-image: url("../images/background-4.jpg");
+    background-size: 50%;
+    /* Ajuste l'image à 50% de sa taille d'origine */
+    background-position: center;
+    /* Centre l'image */
+}
+
+/* Sections */
+
+h2,
+h3 {
+    color: #27374e;
+}
+
+h2 {
+    margin-left: 22%;
+    font-family: "orientalcat";
+    font-size: 35px !important;
+    text-shadow:
+        5px 5px 7px white,
+        /* Ombre en bas à droite */
+        -5px -5px 7px white,
+        /* Ombre en haut à gauche */
+        5px -5px 7px white,
+        /* Ombre en haut à droite */
+        -5px 5px 7px white;
+}
+
+.date{
+    font-family: "simplecat";
+font-size: 25px !important;
+}
+
+h3 {
+    font-family: "simplecat";
+}
+
+
+
+.welcome {
+    margin-left: 1%;
+}
+
+.barNav {
+    background-color: #2c538d;
+    color: white;
+    padding: 0 20px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.titre:hover {
+    text-decoration: none !important;
+}
+
+/* Mettre box-sizing: border-box pour tous les éléments */
+* {
+    box-sizing: border-box;
+}
+
+/* Formulaires */
+.form {
+    margin: 20px auto;
+    width: 60%;
+    background-color: #bccadd;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main-buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+
+}
+
+/* Champs de saisie */
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Boutons */
+button {
+    background-color: #2c538d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    img {
+        width: 25px;
+        display: flex;
+        justify-self: center;
+        align-self: center;
+    }
+}
+
+button:hover {
+    background-color: #103266;
+}
+
+.button-container {
+    display: flex;
+    gap: 5px;
+}
+
+.create-button {
+    margin-left: 30px;
+}
+
+.edit-icon,
+button img {
+    fill: white;
+    /* Applique la couleur blanche aux icônes SVG */
+    width: 20px;
+    /* Ajuste la taille de l'icône si nécessaire */
+    height: 20px;
+    /* Ajuste la taille de l'icône si nécessaire */
+}
+
+/* Pour garantir que les boutons edit et delete aient les icônes en blanc */
+button img {
+    filter: brightness(0) invert(1);
+    /* Inverse les couleurs et les rend blanches */
+}
+
+/* Liste des posts */
+.posts {
+    background-color: white;
+    width: 60%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: rgba(0, 0, 0, 0.1) solid 1px;
+
+}
+
+.date {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.posts p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.posts h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Erreurs */
+.errors {
+    margin: 20px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.errors ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.errors li {
+    margin-bottom: 10px;
+}
+
+/* Liens */
+a {
+    color: #e4e4e4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
